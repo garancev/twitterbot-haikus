@@ -1,7 +1,7 @@
 const Twit = require('twit')
 const db = require('./db.js')
-const emojis = require('./emojis.json').emojis
 const secretPath = './secret.json';
+
 $REQUIRESECRET;
 
 const twitConfig = {
@@ -15,19 +15,21 @@ const T = new Twit(twitConfig);
 async function buildTweet() {
     const selection = await db.getSelection();
     
-    return `${selection.line1} 
+    return {id: selection.id, 
+        content: `${selection.line1} 
 ${selection.line2} 
 ${selection.line3} 
-                  ${emojis[selection.emoji]} - ${selection.author}`;
+                   ${String.fromCodePoint('0x' + selection.code)} - ${selection.author}`
+    };
 }
 
 async function postTweet() {
     const tweet = await buildTweet();
 
-    T.post('statuses/update', { status: tweet }, 
+    T.post('statuses/update', { status: tweet.content }, 
         function(err, data, response) {
             if (err) throw err;
-            db.tweetDone(selection.id);
+            db.tweetDone(tweet.id);
         });
 }
 
@@ -35,6 +37,6 @@ async function logTweet() {
     const tweet = await buildTweet();
     console.log(tweet);
 }
-//logTweet();
+// logTweet();
 
 postTweet();
