@@ -1,7 +1,8 @@
 const Twit = require('twit')
+const db = require('./db.js')
+const emojis = require('./emojis.json').emojis
 const secretPath = './secret.json';
 $REQUIRESECRET;
-const haikus = require('./haikus.json').haikus;
 
 const twitConfig = {
     consumer_key:         $PLACEHOLDER.CONSUMER_KEY,
@@ -11,28 +12,29 @@ const twitConfig = {
   }
 const T = new Twit(twitConfig);
 
-const haikusLength = haikus.length;
-const emojis = {
-    winter: '\u2744'
-}
-function buildTweet() {
-    const index = Math.floor(Math.random() * haikusLength);
-
-    return `${haikus[index].line1} 
-${haikus[index].line2} 
-${haikus[index].line3} 
-                  ${emojis[haikus[index].emoji]} - ${haikus[index].author}`;
-}
-
-function postTweet() {
-    const tweet = buildTweet();
+async function buildTweet() {
+    const selection = await db.getSelection();
     
+    return `${selection.line1} 
+${selection.line2} 
+${selection.line3} 
+                  ${emojis[selection.emoji]} - ${selection.author}`;
+}
+
+async function postTweet() {
+    const tweet = await buildTweet();
+
     T.post('statuses/update', { status: tweet }, 
         function(err, data, response) {
-            if (err) {
-                console.error(err);
-            }
+            if (err) throw err;
+            db.tweetDone(selection.id);
         });
 }
 
-postTweet();
+async function logTweet() {
+    const tweet = await buildTweet();
+    console.log(tweet);
+}
+logTweet();
+
+// postTweet();

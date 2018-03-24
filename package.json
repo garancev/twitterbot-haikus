@@ -5,12 +5,16 @@
   "main": "main.js",
   "scripts": {
     "clean": "rm -rf build/*.js",
-    "replace:production": "sed -e 's/$PLACEHOLDER/process\\.env/g' -e 's/$REQUIRESECRET//g' main.js > build/main.js",
-    "replace:dev": "sed -e 's/$PLACEHOLDER/secret/g' -e 's/$REQUIRESECRET/var secret=require\\(secretPath\\)/g' main.js > build/main.js",
-    "build:production": "npm run clean && npm run replace:production",
-    "build:dev": "npm run clean && npm run replace:dev",
+    "replace:prod:main": "sed -e 's/$PLACEHOLDER/process\\.env/g' -e 's/$REQUIRESECRET//g' main.js > build/main.js",
+    "replace:prod:db": "sed -e 's/$PLACEHOLDER/process\\.env/g' -e 's/$REQUIRESECRET//g' db.js > build/db.js",
+    "replace:prod": "npm run replace:prod:main && npm run replace:prod:db",
+    "replace:dev:main": "sed -e 's/$PLACEHOLDER/secret/g' -e 's/$REQUIRESECRET/var secret=require\\(secretPath\\)/g' main.js > build/main.js",
+    "replace:dev:db": "sed -e 's/$PLACEHOLDER/secret/g' -e 's/$REQUIRESECRET/var secret=require\\(secretPath\\)/g' db.js > build/db.js",
+    "replace:dev": "npm run replace:dev:main && npm run replace:dev:db",
+    "build:prod": "npm run clean && npm run replace:prod",
+    "build:dev": "npm run clean && npm run replace:dev && npm run start",
     "start": "node build/main.js"
-    },
+  },
   "repository": {
     "type": "git",
     "url": "git@me.github.com:garancev/twitterbot-haikus.git"
@@ -27,6 +31,7 @@
   "license": "ISC",
   "dependencies": {
     "node-schedule": "^1.3.0",
+    "pg": "^7.4.1",
     "twit": "^2.2.9"
   }
 }
