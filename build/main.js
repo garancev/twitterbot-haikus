@@ -35,6 +35,6 @@ async function logTweet() {
     const tweet = await buildTweet();
     console.log(tweet);
 }
-logTweet();
+//logTweet();
 
-// postTweet();
+postTweet();
