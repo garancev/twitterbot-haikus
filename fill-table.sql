@@ -1,5 +1,43 @@
 INSERT INTO haikus (line1, line2, line3, author, emoji) VALUES
 
+    ('It''s enviable.', 'The gracefulness of', 'The cat''s love.', 'Ochi Etsujin', 'cat'),
+    ('Only Mount Fuji', 'Is left unburied', 'By young leaves.', 'Yosa Buson', 'fuji'),
+    ('The canola flowers.', 'The moon in the east.', 'The sun in the west.', 'Yosa Buson', 'moon'),
+    ('I curse the man', 'Who is the man loved by me.', 'A cotten rose.', 'Hasegawa Kanajo', 'brokenheart'),
+    ('A tulip,', 'With no shadow,', 'Blossoms.', 'Hasegawa Kanajo', 'flower'),
+    ('Japanese knotweed', 'Flowers had just given rise', 'A pastoral idyll.', 'Takahama Kyoshi', 'herb'),
+    ('The canola flowers,', 'And the tide goes back', 'The small stream.', 'Masaoka Shiki', 'wave'),
+    ('Someone dropped', 'Or dropped by itself on the street', 'The flower of camellia.', 'Masaoka Shiki', 'flower'),
+    ('There is a wind,', 'The kerria bounces', 'The butterfly.', 'Masaoka Shiki', 'butterfly'),
+    ('The dandelions', 'Are scattered on the green.', 'It''s spring field.', 'Masaoka Shiki', 'flower'),
+    ('A tea flower,', 'The warmth days', 'Come to end.', 'Takahama Kyoshi', 'hibiscus'),
+    ('Around the paper lantern', 'Fallen blossoms with the wind', 'Can be seen.', 'Takahama Kyoshi', 'lantern'),
+    ('A tea flower,', 'The warmth days', 'Come to end.', 'Takahama Kyoshi', 'tea'),
+    ('Burning fallen leaves,', 'The warm autumn day is', 'Defined.', 'Takahama Kyoshi', 'fall'),
+    ('The distant mountain', 'Catch the sun.', 'The desolate field.', 'Takahama Kyoshi', 'sunset'),
+    ('The clear day in the rainy season.', 'The madder red of the twilight appeared', 'And vanished instantly.', 'Takahama Kyoshi', 'sunset'),
+    ('The short summer night.', 'The dream and real', 'Are same things.', 'Takahama Kyoshi', 'star'),
+    ('The summer butterfly', 'Has a sharp look', 'And run to here.', 'Takahama Kyoshi', 'butterfly'),
+    ('When the wind blows', 'The carp stream come', 'From the next door.', 'Takahama Kyoshi', 'fish'),
+    ('In the bamboo grove', 'The yellow spring sunlight,', 'I look up at it.', 'Takahama Kyoshi', 'sun'),
+    ('Saying something,', 'The lip feel cold.', 'The Autum wind.', 'Matsuo Basho', 'fall'),
+    ('Ah, tranquility!', 'Penetrating the very rock, ', 'A cicada''s voice.', 'Matsuo Basho', 'mountain'),
+    ('Grasses in summer.', 'The warriors'' dreams', 'All that left.', 'Matsuo Basho', 'herb'),
+    ('The early summer rain', 'Leaves behind', 'Hikari-do.', 'Matsuo Basho', 'rain'),
+    ('Spring is passing.', 'The birds cry, and the fishes fill', 'With tears on their eyes.', 'Matsuo Basho', 'rain'),
+    ('Let''s go out', 'To see the snow view', 'Where we slip and fall.', 'Matsuo Basho', 'winter'),
+    ('The snow and snow.', 'This evening would have', 'The great moon of December.', 'Matsuo Basho', 'moon'),
+    ('In the dark night,', 'Losing sight of the nest,', 'The plover crys.', 'Matsuo Basho', 'stars'),
+    ('Firstly, at the beginning of Spring,', 'They sell Sake and ume blossoms', 'And I smell them.', 'Matsuo Basho', 'sake'),
+    ('It''s pleasant.', 'I''m cooled in the green paddy field.', 'And the sound of the water.', 'Matsuo Basho', 'herb'),
+    ('Their own fire', 'Are on the trees, the fireflies', 'Around the house with flowers.', 'Matsuo Basho', 'fire'),
+    ('In the autumn night, ', 'Breaking into', 'A pleasant chat.', 'Matsuo Basho', 'stars'),
+    ('Holding the umbrella,', 'The mother is behind.', 'The autumn rain.', 'Nakamura Teijo', 'rain'),
+    ('The autumn evening.', 'The buses are in line,', 'And one goes out.', 'Nakamura Teijo', 'bus'),
+    ('The migratory birds', 'Make the wind blowing down to Asaka', 'From mountains frequently.', 'Kawahigashi Hekigoto', 'wind'),
+    ('Oh, Matsuyama.', 'Higher than autumn,', 'The castle tower is.', 'Masaoka Shiki', 'tower'),
+    ('In September', 'The sky wears', 'A lined kimono.', 'Kobayashi Issa', 'kimono'),
+    ('The baby cow', 'Goes on a trip.', 'In the autumn rain.', 'Kobayashi Issa', 'cow'),
     ('A little boy sings', 'on a terrace, eyes aglow.', 'Ridge spills upward.', 'Robert Yehling', 'music'),
     ('meteor shower', 'a gentle wave', 'wets our sandals', 'Michael Dylan Welch', 'star'),
     ('Just friends: ', 'he watches my gauze dress', 'blowing on the line.', 'Alexis Rotella', 'dress'),
@@ -46,9 +84,20 @@ INSERT INTO haikus (line1, line2, line3, author, emoji) VALUES
     ('Breeze teasing Palm trees,', 'Turtles sunning by the pond,', 'Lovely winter day.', 'Robert A. Dufresne', 'winter');
 
 
-
 INSERT INTO emojis (name, code) VALUES
-    
+   
+    ('cat', '1F408'),
+    ('brokenheart', '1F494'),
+    ('lantern', '1F3EE'),
+    ('tea', '1F375'),
+    ('fish', '1F41F'),
+    ('mountain', '26F0'),
+    ('sake', '1F376'),
+    ('fire', '1F525'),
+    ('stars', '1F30C'),
+    ('tower', '1F5FC'),
+    ('kimono', '1F458'),
+    ('bus', '1F68D'),
     ('dress', '1F457'),
     ('tomato', '1F345'),
     ('music', '1F3B6'),
@@ -79,3 +128,4 @@ INSERT INTO emojis (name, code) VALUES
     ('babybird', '1F424'),
     ('hibiscus', '1F33A'),
     ('winter', '2744');
+
