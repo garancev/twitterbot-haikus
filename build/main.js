@@ -2,25 +2,25 @@ const Twit = require('twit')
 const db = require('./db.js')
 const secretPath = './secret.json';
 
-var secret=require(secretPath);
+;
 
 const twitConfig = {
-    consumer_key:         secret.CONSUMER_KEY,
-    consumer_secret:      secret.CONSUMER_SECRET,
-    access_token:         secret.ACCESS_TOKEN,
-    access_token_secret:  secret.ACCESS_TOKEN_SECRET
+    consumer_key:         process.env.CONSUMER_KEY,
+    consumer_secret:      process.env.CONSUMER_SECRET,
+    access_token:         process.env.ACCESS_TOKEN,
+    access_token_secret:  process.env.ACCESS_TOKEN_SECRET
   }
 const T = new Twit(twitConfig);
 
 async function buildTweet() {
     const selection = await db.getSelection();
     
-        return {id: selection.id, 
-            content: `${selection.line1} 
+    return {id: selection.id, 
+        content: `${selection.line1} 
 ${selection.line2} 
 ${selection.line3} 
                    ${String.fromCodePoint('0x' + selection.code)} - ${selection.author}`
-        };
+    };
 }
 
 async function postTweet() {
