@@ -15,6 +15,7 @@ const getSelection = async function() {
     FROM public.haikus as haikus
     JOIN emojis ON haikus.emoji = emojis.name
     WHERE haikus.tweeted is false
+    ORDER BY RANDOM()
     LIMIT 1;
 `);
     if (typeof res.rows[0] === 'undefined') {
