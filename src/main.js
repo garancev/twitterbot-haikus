@@ -9,12 +9,12 @@ const twitConfig = {
     consumer_secret:      $PLACEHOLDER.CONSUMER_SECRET,
     access_token:         $PLACEHOLDER.ACCESS_TOKEN,
     access_token_secret:  $PLACEHOLDER.ACCESS_TOKEN_SECRET
-  }
+}
 const T = new Twit(twitConfig);
 
 async function buildTweet() {
     const selection = await db.getSelection();
-    
+
     return {id: selection.id, 
         content: `${selection.line1} 
 ${selection.line2} 
@@ -39,4 +39,8 @@ async function logTweet() {
 }
 // logTweet();
 
-postTweet();
+try {
+    postTweet();
+} catch (e) {
+    console.err(e);
+}

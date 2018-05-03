@@ -1,10 +1,10 @@
 const secretPath = './secret.json';
-;
+$REQUIRESECRET;
 
 const { Client } = require('pg');
 
 const client = new Client({
-    connectionString: process.env.DATABASE_URL,
+    connectionString: $PLACEHOLDER.DATABASE_URL,
     ssl: true,
 });
 

@@ -1,5 +1,23 @@
 INSERT INTO haikus (line1, line2, line3, author, emoji) VALUES
 
+    ('The wren', 'Earns his living', 'Noiselessly.', 'Kobayahsi Issa ', 'babybird'),
+    ('Over-ripe sushi,', 'The Master', 'Is full of regret.', 'Yosa Buson', 'brokenheart'),
+    ('In the cicada''s cry', 'No sign can foretell', 'How soon it must die.', 'Matsuo Basho', 'music'),
+    ('Winter seclusion -', 'Listening, that evening,', 'To the rain in the mountain.', 'Kobayashi Issa', 'music'),
+    ('My life, -', 'How much more of it remains?', 'The night is brief.', 'Masaoka Shiki', 'stars'),
+    ('Sparrow''s child', 'out of the way, out of the way!', 'the stallion''s coming through', 'Kobayashi Issa', 'babybird'),
+    ('I kill an ant', 'and realize my three children', 'have been watching.', 'Kato Shuson', 'web'),
+    ('No one travels', 'Along this way but I,', 'This autumn evening.', 'Matsuo Basho', 'fall'),
+    ('First autumn morning', 'the mirror I stare into', 'shows my father''s face.', 'Murakami Kijo', 'fall'),
+    ('The lamp once out', 'Cool stars enter', 'The window frame.', 'Natsume Soseki', 'stars'),
+    ('Toward those short trees', 'We saw a hawk descending', 'On a day in spring.', 'Masaoka Shiki', 'babybirdbird'),
+    ('Over the wintry', 'forest, winds howl in rage', 'with no leaves to blow.', 'Natsume Soseki', 'tree'),
+    ('Don’t weep, insects –', 'Lovers, stars themselves,', 'Must part.', 'Kobayashi Issa', 'web'),
+    ('Blowing from the west', 'Fallen leaves gather', 'In the east.', 'Yosa Buson', 'fall'),
+    ('Consider me', 'As one who loved poetry', 'And persimmons.', 'Masaoaka Shiki', 'scroll'),
+    ('From time to time', 'The clouds give rest', 'To the moon-beholders.', 'Matsuo Basho', 'moon'),
+
+
     ('It''s enviable.', 'The gracefulness of', 'The cat''s love.', 'Ochi Etsujin', 'cat'),
     ('Only Mount Fuji', 'Is left unburied', 'By young leaves.', 'Yosa Buson', 'fuji'),
     ('The canola flowers.', 'The moon in the east.', 'The sun in the west.', 'Yosa Buson', 'moon'),
@@ -84,8 +102,10 @@ INSERT INTO haikus (line1, line2, line3, author, emoji) VALUES
     ('Breeze teasing Palm trees,', 'Turtles sunning by the pond,', 'Lovely winter day.', 'Robert A. Dufresne', 'winter');
 
 
+
 INSERT INTO emojis (name, code) VALUES
    
+    ('scroll', '1F4DC'),
     ('cat', '1F408'),
     ('brokenheart', '1F494'),
     ('lantern', '1F3EE'),
